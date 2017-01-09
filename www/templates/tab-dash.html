@@ -1,0 +1,55 @@
+<ion-view view-title="PortuQuizz" ng-init="initialization()">
+
+  <div class="bar bar-header blue-std" style="border: 0">
+    <button class="button button-icon icon ion-navicon" style="color: white;"></button>
+    <img src="img/logo_header.png" style="margin: 0.3em auto; width: 26px; height: 31px;" class="title"></img>
+  </div>
+
+  <ion-content class="has-header padding blue-dark">
+
+    <div>
+      <div style="margin: 1em auto;" class="circle">1</div>
+      <p class="track-title">
+        Fonética
+      </p>
+      <p>
+        Quiz com exercícios de fonética, um assunto considerado bobo, mas que pode confundir muita gente.
+      </p>
+
+      <button ng-click="modalSimpleQuestion.show()" class="button icon-left blue-std" style="border-radius: 20px; width: 60%; margin: 0.3em 0 1.5em 0; color:white">Quero responder agora</button>
+
+      <hr class="blue-light" style="margin: 0 1em;">
+    </div>
+
+    <div>
+      <div style="margin: 1em auto;" class="circle">2</div>
+      <p class="track-title">
+        Crase
+      </p>
+      <p>
+        É a fusão de duas vogais da mesma natureza. <br>No português assinalamos a crase com o acento grave.
+      </p>
+
+      <button class="button icon-left ion-android-checkbox-outline yellow" style="border-radius: 20px; width: 45%; margin: 0.3em 0 1.5em 0;">Ver respostas</button>
+
+      <hr class="blue-light" style="margin: 0 1em;">
+    </div>
+
+
+    <div>
+      <div style="margin: 1em auto;" class="circle">3</div>
+      <p class="track-title">
+        Concordância verbal
+      </p>
+      <p>
+        Ocorre quando o verbo se flexiona para concordar com o seu sujeito.
+      </p>
+
+      <button class="button icon-left blue-std" style="border-radius: 20px; width: 60%; margin: 0.3em 0 1.5em 0; color:white;">Quero responder agora</button>
+
+      <hr class="blue-light" style="margin: 0 1em;">
+    </div>
+
+
+    </ion-content>
+</ion-view>

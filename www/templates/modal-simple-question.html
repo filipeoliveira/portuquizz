@@ -1,0 +1,46 @@
+
+  <div class="bar bar-header blue-std" style="border: 0">
+    <button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="return()" style="color: white;"></button>
+    <img src="img/logo_header.png" style="margin: 0.3em auto; width: 26px; height: 31px;" class="title"></img>
+  </div>
+
+  <ion-content class="has-header blue-dark">
+
+    <div>
+      <div>
+        <p class="question">
+        {{question.title}}:</p>
+      </div>
+      <div>
+
+        <ul class="list">
+            <li class="item" ng-repeat="alternative in question.alternatives">
+              <span ng-if="alternative.correct" ng-click="showAnswer(true)" class="list-item">{{alternative.description}}</span>
+              <span ng-if="!alternative.correct" ng-click="showAnswer(false)" class="list-item">{{alternative.description}}</span>
+            </li>
+        </ul>
+
+      </div>
+<div class="down-list">
+      <button ng-click="changeQuestion()" class="button  ion-ios-arrow-thin-right icon icon-right blue-std" style="border-radius: 20px; width: 55%; margin: 0.3em 0 0.5em 0; color:white">Pular esta pergunta</button>
+      <p class="jump-text">Você tem 2 pulos disponíveis</p>
+
+      <button  ng-click="showHint()" class="button  ion-star icon icon-right blue-grey" style="border-radius: 20px; width: 55%; margin: 0.3em 0 0.5em 0; color:white">Veja uma dica</button>
+      <p class="hint" >{{hint}}</p>
+</div>
+
+<div class="blue-std question-footer">
+
+  <div class="circle-track">
+    <div style="margin: 1em auto; display:inline-block" class="circle">1</div>
+    <div style="margin: 1em auto; display:inline-block" class="circle">2</div>
+    <div style="margin: 1em auto; display:inline-block" class="circle">3</div>
+    <div style="margin: 1em auto; display:inline-block" class="circle">4</div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+    </div>
+
+
+    </ion-content>
