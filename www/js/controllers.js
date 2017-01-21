@@ -87,6 +87,9 @@ $scope.questions = [
   },
 ]
 
+$scope.endQuiz = false;
+
+
 $scope.initialization = function(){
   $scope.question = $scope.questions[0];
 }
@@ -142,9 +145,28 @@ $scope.showAnswer = function(bool){
 }
 
 function changeQuestion(){
+
+
+
   var index = $scope.questions.indexOf($scope.question);
-  console.log(index);
-  $scope.question = $scope.questions[index + 1];
+  var numberOfQuestions = $scope.questions.length -1;
+
+
+  console.log(numberOfQuestions);
+  //Last question available
+  if (index === numberOfQuestions){
+    $scope.endQuiz = true;
+    $scope.modalSimpleQuestion.hide();
+    $scope.question = $scope.questions[0];
+
+  }
+  else{
+    $scope.question = $scope.questions[index + 1];
+  }
+
+
+
+
 }
 
   $scope.changeQuestion = function(){
