@@ -98,3 +98,13 @@
   background-color: #efc544!important;
   color: white!important;
 }
+
+.list-item{
+  font-size: medium!important;
+}
+
+
+.popup{
+  width: 90%!important;
+  border: 1px solid #c3c3c3;
+}

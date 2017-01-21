@@ -95,14 +95,20 @@ $scope.initialization = function(){
 $scope.showAnswer = function(bool){
 
   if(bool){
-    var popupCorrect = $ionicPopup.show({
+    $scope.popupCorrect = $ionicPopup.show({
         template: 'Resposta correta',
         scope: $scope,
         buttons: [
-          { text: 'Menu principal' },
+          {
+            text: 'Menu',
+            type: 'blue-std white',
+            onTap: function(e) {
+              cancela();
+            }
+          },
           {
             text: 'Próxima questão',
-            type: 'blue-std',
+            type: 'blue-dark white',
             onTap: function(e) {
               changeQuestion();
             }
@@ -111,19 +117,19 @@ $scope.showAnswer = function(bool){
       });
   }
   else {
-    var popupWrong = $ionicPopup.show({
-        template: 'Resposta errada',
+    $scope.popupWrong = $ionicPopup.show({
+        template: '<i style="color:#373737 margin-right: 0.5em" class="icon ion-close-circled"></i><span style="color:#373737"> Resposta errada</span>',
         scope: $scope,
         buttons: [
           {
-            text: 'Menu principal',
-            type: 'blue-grey',
+            text: 'Menu',
+            type: 'blue-std white',
             onTap: function(e) {
-              cancel();
+              cancela();
             }
           },
           {
-            text: 'Próxima questão',
+            text: 'Avançar',
             type: 'blue-dark white',
             onTap: function(e) {
               changeQuestion();
@@ -157,8 +163,13 @@ function changeQuestion(){
       $scope.hint = '';
       $scope.modalSimpleQuestion.hide();
       $scope.question = $scope.questions[0];
-      popupWrong.hide();
-      popupCorrect.hide();
+
+      if($scope.popupWrong){
+        $scope.popupWrong.close();
+      }
+      if($scope.popupWrong){
+        $scope.popupCorrect.close();
+      }
 
   }
 
