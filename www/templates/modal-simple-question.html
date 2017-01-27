@@ -14,9 +14,13 @@
       <div>
 
         <ul class="list">
-            <li class="item" ng-repeat="alternative in question.alternatives">
-              <span ng-if="alternative.correct" ng-click="showAnswer(true)" class="list-item">{{alternative.description}}</span>
-              <span ng-if="!alternative.correct" ng-click="showAnswer(false)" class="list-item">{{alternative.description}}</span>
+            <li class="item" style="padding: 0" ng-repeat="alternative in question.alternatives">
+              <div style="margin: 16px" ng-if="alternative.correct" ng-click="showAnswer(true)">
+                <span class="list-item">{{alternative.description}}</span>
+              </div>
+              <div style="margin: 16px" ng-if="!alternative.correct" ng-click="showAnswer(false)">
+                <span class="list-item">{{alternative.description}}</span>
+              </div>
             </li>
         </ul>
 
