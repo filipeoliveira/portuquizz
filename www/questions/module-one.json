@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Marque a alternativa onde só há ditongos decrescentes",
+    "alternatives": [
+      {
+        "id": 1,
+        "description": "Pai; mau; papéis",
+        "correct": true
+      },
+      {
+        "id": 2,
+        "description": "Véu, herói, ópio",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "description": "Água, sábia, leite",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "description": "Vácuo, gratuito, fui",
+        "correct": false
+      }
+    ],
+    "hint": "Ditongo decrescente é o encontro vocálico, numa única sílaba, de uma vogal(/a/, /e/, /o/) + semivogal (/i/, /u/)"
+  },
+  {
+    "id": 2,
+    "title": "Quanto a separação silábica, marque a única alternativa incorreta",
+    "alternatives": [
+      {
+        "id": 1,
+        "description": "Co-e-lho; Ân-si-a; gai-o-la",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "description": "Ba-lei-a; des-mai-a-do; ap-ti-dão;",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "description": "Di-gno; di-sen-te-ria; subs-tân-ci-a",
+        "correct": true
+      },
+      {
+        "id": 4,
+        "description": "Hi-dre-lé-tri-ca; fe-é-ri-co; af-ta",
+        "correct": false
+      }
+    ],
+    "hint": "As alternativas (3) e (4) estão incorretas. "
+  },
+  {
+    "id": 1,
+    "title": "Marque a alternativa onde só há ditongos crescentes",
+    "alternatives": [
+      {
+        "id": 1,
+        "description": "Mãe; várias; serie",
+        "correct": false
+      },
+      {
+        "id": 2,
+        "description": "Vaidade; nódoa; infância",
+        "correct": false
+      },
+      {
+        "id": 3,
+        "description": "Rei; coitado; muita",
+        "correct": false
+      },
+      {
+        "id": 4,
+        "description": "Quadra; tênue; infância",
+        "correct": true
+      }
+    ],
+    "hint": "Ditongo crescente é o encontro vocálico, numa única sílaba, de uma semivogal (/i/, /u/) + vogal(/a/, /e/, /o/)."
+  }
+]
