@@ -1,8 +1,12 @@
 angular.module('starter.controllers', [])
 
+.controller('DashCtrl', function($scope, $state, $ionicSideMenuDelegate, $ionicModal, $ionicPopup, $http) {
 
+// -----------------------------------------//
+//    Variables initialization
+// -----------------------------------------//
 $scope.endQuiz = false;
-
+$scope.jumpsAvailable = 1;
 
 $scope.initialization = function(){
 
@@ -24,38 +28,6 @@ $scope.initialization = function(){
 
 $scope.showAnswer = function(bool){
 
-  if(bool){
-    $scope.popupCorrect = $ionicPopup.show({
-        template: 'Resposta correta',
-        scope: $scope,
-        buttons: [
-          {
-            text: 'Menu',
-            type: 'blue-std white',
-            onTap: function(e) {
-              cancela();
-            }
-          },
-          {
-            text: 'Próxima questão',
-            type: 'blue-dark white',
-            onTap: function(e) {
-              changeQuestion();
-            }
-          }
-        ]
-      });
-  }
-  else {
-    $scope.popupWrong = $ionicPopup.show({
-        template: '<i style="color:#373737 margin-right: 0.5em" class="icon ion-close-circled"></i><span style="color:#373737"> Resposta errada</span>',
-        scope: $scope,
-        buttons: [
-          {
-            text: 'Menu',
-            type: 'blue-std white',
-            onTap: function(e) {
-              cancela();
             }
           },
           {
@@ -71,8 +43,10 @@ $scope.showAnswer = function(bool){
 
 }
 
-function changeQuestion(){
-
+  $scope.jumpQuestion = function(){
+    $scope.jumpsAvailable = $scope.jumpsAvailable - 1;
+    changeQuestion();
+  }
 
 
   var index = $scope.questions.indexOf($scope.question);

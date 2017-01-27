@@ -22,8 +22,11 @@
 
       </div>
 <div class="down-list">
-      <button ng-click="changeQuestion()" class="button  ion-ios-arrow-thin-right icon icon-right blue-std" style="border-radius: 20px; width: 55%; margin: 0.3em 0 0.5em 0; color:white">Pular esta pergunta</button>
-      <p class="jump-text">Você tem 2 pulos disponíveis</p>
+      <button ng-if="jumpsAvailable"       ng-click="jumpQuestion()" class="button  ion-ios-arrow-thin-right icon icon-right blue-std" style="border-radius: 20px; width: 55%; margin: 0.3em 0 0.5em 0; color:white">Pular esta pergunta</button>
+      <p      ng-if="jumpsAvailable === 1" class="jump-text">Você possui {{jumpsAvailable}} pulo disponível</p>
+      <p      ng-if="jumpsAvailable > 1"   class="jump-text">Você possui {{jumpsAvailable}} pulos disponíveis</p>
+
+      <p      ng-if="!jumpsAvailable" class="jump-text">Você não possui pulos disponíves</p>
 
       <button  ng-click="showHint()" class="button  ion-star icon icon-right blue-grey" style="border-radius: 20px; width: 55%; margin: 0.3em 0 0.5em 0; color:white">Veja uma dica</button>
       <p class="hint" >{{hint}}</p>
