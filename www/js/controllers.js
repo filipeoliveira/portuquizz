@@ -76,16 +76,14 @@ $scope.showAnswer = function(bool){
 
   $scope.skipIntro = function(){
     $state.go('tab.dash');
+  $scope.resetQuizz = function(){
+    resetQuizz();
   };
 
-  $scope.return = function(){
-    cancela();
-  };
-
-  function cancela(){
-      $scope.hint = '';
+  function resetQuizz(){
       $scope.modalSimpleQuestion.hide();
       $scope.question = $scope.questions[0];
+      $scope.hint = '';
 
       if($scope.popupWrong){
         $scope.popupWrong.close();
