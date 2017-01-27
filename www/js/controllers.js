@@ -26,34 +26,73 @@ $scope.initialization = function(){
 }
 
 
-$scope.showAnswer = function(bool){
+// -----------------------------------------//
+//    Answers actions
+// -----------------------------------------//
 
+$scope.skipIntro = function(){
+  $state.go('tab.dash');
+};
+
+  $scope.showAnswer = function(bool){
+
+    if(bool){
+      $scope.popupCorrect = $ionicPopup.show({
+          template: 'Resposta correta',
+          scope: $scope,
+          buttons: [
+            {
+              text: 'Menu',
+              type: 'blue-std white',
+              onTap: function(e) {
+                resetQuizz();
+              }
+            },
+            {
+              text: 'Próxima questão',
+              type: 'blue-dark white',
+              onTap: function(e) {
+                changeQuestion();
+              }
             }
-          },
-          {
-            text: 'Avançar',
-            type: 'blue-dark white',
-            onTap: function(e) {
-              changeQuestion();
+          ]
+        });
+    }
+    else {
+      $scope.popupWrong = $ionicPopup.show({
+          template: '<i style="color:#373737 margin-right: 0.5em" class="icon ion-close-circled"></i><span style="color:#373737"> Resposta errada</span>',
+          scope: $scope,
+          buttons: [
+            {
+              text: 'Menu',
+              type: 'blue-std white',
+              onTap: function(e) {
+                resetQuizz();
+              }
+            },
+            {
+              text: 'Avançar',
+              type: 'blue-dark white',
+              onTap: function(e) {
+                changeQuestion();
+              }
             }
-          }
-        ]
-      });
+          ]
+        });
+    }
   }
 
-}
 
   $scope.jumpQuestion = function(){
     $scope.jumpsAvailable = $scope.jumpsAvailable - 1;
     changeQuestion();
   }
 
+  function changeQuestion(){
 
   var index = $scope.questions.indexOf($scope.question);
   var numberOfQuestions = $scope.questions.length -1;
 
-
-  console.log(numberOfQuestions);
   //Last question available
   if (index === numberOfQuestions){
     $scope.endQuiz = true;
@@ -64,18 +103,12 @@ $scope.showAnswer = function(bool){
   else{
     $scope.question = $scope.questions[index + 1];
   }
-
-
-
-
 }
 
-  $scope.changeQuestion = function(){
-    changeQuestion();
-    }
+  $scope.showHint = function(){
+    $scope.hint = $scope.question.hint;
+  }
 
-  $scope.skipIntro = function(){
-    $state.go('tab.dash');
   $scope.resetQuizz = function(){
     resetQuizz();
   };
@@ -94,11 +127,14 @@ $scope.showAnswer = function(bool){
 
   }
 
-  $scope.showHint = function(){
-    $scope.hint = $scope.question.hint;
-  }
 
-  //modalInfoHelp
+
+
+
+// -----------------------------------------//
+//    Variables initialization
+// -----------------------------------------//
+
 $ionicModal.fromTemplateUrl('templates/modal-simple-question.html', function($ionicModal) {
     $scope.modalSimpleQuestion = $ionicModal;
     }, {
