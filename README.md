@@ -26,17 +26,18 @@ Default quizz screen
 Roadmap
 -------------
 
-Portuquizz is momentarily receiving data from a JSON object that inherits the app. In further updates, the app will be able to load a JSON file or request an API to load data for the quizzes.
+Portuquizz is momentarily receiving data from a JSON file that inherits the app. In further updates, the app will have more exercises and a user system for tracking progress in quizzes.
 
 
 How to install and run
 -------------
 
 First step is to git clone the application:
-> git clone (link)
+> git clone https://github.com/filipeoliveira/portuquizz.git
 
 Then you cd into portuquizz dir and run npm install:
 > cd portuquizz
+
 > !npm install
 
 
