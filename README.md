@@ -28,7 +28,25 @@ Roadmap
 
 Portuquizz is momentarily receiving data from a JSON object that inherits the app. In further updates, the app will be able to load a JSON file or request an API to load data for the quizzes.
 
+
+How to install and run
+-------------
+
+First step is to git clone the application:
+> git clone (link)
+
+Then you cd into portuquizz dir and run npm install:
+> cd portuquizz
+> !npm install
+
+
+Now you should be ready to run the application locally:
+> ionic serve -vvv
+
+If anything went wrong through this setup please create an issue and report it.
+
 Built with
 -------------
 
-Ionic 1.3.2, Atom, and a lot of fun :)
+![N|Solid](www/img/ionic.png)
+![N|Solid](www/img/atom.png)
